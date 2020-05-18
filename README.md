@@ -1,8 +1,8 @@
-# Barocde Parser
+# Barcode Parser
 This android library is intended to offer capability to extract data from raw barcode string.
 Extracted data is available as list of multilanguage labels and optionally formatted data.
 
-## Prerequisities
+## Prerequisites
 * Android studio 3.6+
 * Android min SDK version >= 21
 
