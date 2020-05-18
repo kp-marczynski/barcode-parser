@@ -12,7 +12,7 @@ class Gs1Parser {
         result: List<BarcodeField>
     ): List<BarcodeField> =
         when {
-            barcodeToParse.isEmpty() -> result
+            barcodeToParse.isEmpty() -> listOf(getFormattedBarcode(result)) + result
 
             barcodeToParse.startsWith("]") -> parseBarcode(barcodeToParse.substring(3), result)
 
@@ -32,6 +32,11 @@ class Gs1Parser {
                 )
             }
         }
+
+    private fun getFormattedBarcode(fields: List<BarcodeField>) =
+        BarcodeField(Gs1ApplicationIdentifier.GS1_RAW, fields.joinToString(" ") {
+            "(${it.getCode()}) ${it.getRawData()}"
+        })
 
     private fun extractGs1Code(
         barcodeToParse: String,
