@@ -14,6 +14,8 @@ Then run:
     val barcodeToParse = "0218017596018530"
     val result = BarcodeResultParser().parseBarcode(barcodeToParse), BarcodeFormat.GS1_128) }
 
+For more usage examples see tests in BarcodeParserTest class.
+
 ## Supported Barcodes
 * GS1-128
 

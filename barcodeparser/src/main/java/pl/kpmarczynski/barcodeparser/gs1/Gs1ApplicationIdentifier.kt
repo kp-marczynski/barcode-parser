@@ -16,6 +16,7 @@ enum class Gs1ApplicationIdentifier(
     override val maxDataLength: Int,
     override val dataFormatter: ((String, String) -> String)? = null
 ) : BarcodeLabel {
+    GS1_NAME("", R.string.product_name, 0, 0, 0),
     GS1_RAW("", R.string.parsed_code, 0, 0, 0),
     GS1_MALFORMED("", R.string.malformed_barcode, 0, 0, 0),
     GS100("00", R.string.GS1_00, 2, 18, 18),  

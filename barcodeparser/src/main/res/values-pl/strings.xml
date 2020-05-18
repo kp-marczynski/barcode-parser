@@ -4,6 +4,7 @@
     <string name="malformed_barcode">Niepoprawny kod</string>
     <string name="product_saved_message">Produkt %s zapisany!</string>
     <string name="parsed_code">Odczytany kod</string>
+    <string name="product_name">Nazwa produktu</string>
 
     <!-- Gs1 codes -->
     <string name="GS1_00">Seryjny Numer Jednostki Wysyłkowej (SSCC)</string>

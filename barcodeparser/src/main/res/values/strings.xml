@@ -5,6 +5,7 @@
     <string name="malformed_barcode">Malformed barcode</string>
     <string name="product_saved_message">Product %s saved!</string>
     <string name="parsed_code">Parsed code</string>
+    <string name="product_name">Product name</string>
 
     <!-- Gs1 codes -->
     <string name="GS1_00">Serial Shipping Container Code (SSCC)</string>
