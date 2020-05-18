@@ -11,8 +11,8 @@ Extracted data is available as list of multilanguage labels and optionally forma
 
 Then run:
 
-  val barcodeToParse = "0218017596018530"
-  val result = BarcodeResultParser().parseBarcode(barcodeToParse), BarcodeFormat.GS1_128) }
+    val barcodeToParse = "0218017596018530"
+    val result = BarcodeResultParser().parseBarcode(barcodeToParse), BarcodeFormat.GS1_128) }
 
 ## Supported Barcodes
 * GS1-128
