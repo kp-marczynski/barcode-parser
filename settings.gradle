@@ -1,0 +1,2 @@
+rootProject.name='Barcode Parser'
+include ':barcodeparser'
