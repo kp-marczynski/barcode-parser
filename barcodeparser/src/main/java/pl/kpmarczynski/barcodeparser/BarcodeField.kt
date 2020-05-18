@@ -6,7 +6,7 @@ import kotlinx.android.parcel.Parcelize
 import kotlinx.android.parcel.RawValue
 
 @Parcelize
-data class BarcodeField(private val label: @RawValue BarcodeLabel, private val value: String): Parcelable {
+data class BarcodeField(val label: @RawValue BarcodeLabel, private val value: String): Parcelable {
     fun getDescriptionId() = label.identifierDescriptionId
     fun getCode() = value.substring(0, label.identifierLength)
     fun getRawData() = value.substring(label.identifierLength)
