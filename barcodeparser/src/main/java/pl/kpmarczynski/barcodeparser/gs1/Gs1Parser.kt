@@ -43,12 +43,16 @@ class Gs1Parser {
         gs1Code: Gs1ApplicationIdentifier
     ): Pair<String, BarcodeField> {
         val dataEndIndex = getDataEndIndex(barcodeToParse, gs1Code)
-        val data = barcodeToParse.substring(0, dataEndIndex)
-            .replace(GROUP_SEPARATOR, "")
-        return Pair(
-            barcodeToParse.substring(dataEndIndex),
-            BarcodeField(gs1Code, data)
-        )
+        return if (dataEndIndex < gs1Code.minDataLength - gs1Code.identifierLength)
+            Pair("", BarcodeField(Gs1ApplicationIdentifier.GS1_MALFORMED, barcodeToParse))
+        else {
+            val data = barcodeToParse.substring(0, dataEndIndex)
+                .replace(GROUP_SEPARATOR, "")
+            Pair(
+                barcodeToParse.substring(dataEndIndex),
+                BarcodeField(gs1Code, data)
+            )
+        }
     }
 
     private fun getDataEndIndex(

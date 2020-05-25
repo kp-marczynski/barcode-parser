@@ -3,7 +3,7 @@ package pl.kpmarczynski.barcodeparser
 import pl.kpmarczynski.barcodeparser.gs1.Gs1ApplicationIdentifier
 
 data class Barcode(val fields: List<BarcodeField>) {
-    fun merge(other: Barcode): Barcode {
+    operator fun plus(other: Barcode): Barcode {
         val raw1 = fields.firstOrNull { it.label == Gs1ApplicationIdentifier.GS1_RAW }?.getRawData()
         val raw2 = other.fields.firstOrNull { it.label == Gs1ApplicationIdentifier.GS1_RAW }?.getRawData()
 
